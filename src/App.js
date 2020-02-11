@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-import Todos from './components/Todos';
+import TodosContainer from './components/TodosContainer';
 
 function App() {
   const [todos, setTodos] = useState([
     {
       id: 1,
       title: 'Attend restro meeting',
-      done: false
+      done: true
     },
     {
       id: 2,
@@ -23,7 +23,7 @@ function App() {
 
   return (
     <React.Fragment>
-      <Todos todos={todos} />
+      <TodosContainer todos={todos} />
     </React.Fragment>
   );
 }
