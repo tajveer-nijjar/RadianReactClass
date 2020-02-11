@@ -23,7 +23,7 @@ function App() {
 
   return (
     <React.Fragment>
-      <Todos />
+      <Todos todos={todos} />
     </React.Fragment>
   );
 }
