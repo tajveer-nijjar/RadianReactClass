@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import TodosContainer from './components/TodosContainer';
+import AddTodoForm from './components/AddTodoForm';
 
 function App() {
   const [todos, setTodos] = useState([
@@ -34,12 +35,22 @@ function App() {
   };
 
   const handleDeleteTodoClick = id => {
-    const updatedTodos = todos.filter(t => t.id !== id);
-    setTodos(updatedTodos);
+    setTodos(todos.filter(t => t.id !== id));
+  };
+
+  const addTodo = title => {
+    const newTodo = {
+      id: 4,
+      title: title,
+      done: false
+    };
+
+    setTodos([...todos, newTodo]);
   };
 
   return (
     <React.Fragment>
+      <AddTodoForm addTodo={addTodo} />
       <TodosContainer
         todos={todos}
         handleCheckChange={handleCheckChange}
