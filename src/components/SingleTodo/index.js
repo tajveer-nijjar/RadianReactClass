@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SingleTodo = props => {
-  const { todo, handleCheckChange } = props;
+  const { todo, handleCheckChange, handleDeleteTodoClick } = props;
 
   const getStyle = () => {
     const style = {
@@ -24,6 +24,8 @@ const SingleTodo = props => {
       <p>
         <input type='checkbox' onChange={() => handleCheckChange(todo.id)} />
         {todo.title}
+        {'   '}
+        <button onClick={() => handleDeleteTodoClick(todo.id)}>X</button>
       </p>
     </div>
   );

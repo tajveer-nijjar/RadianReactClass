@@ -33,9 +33,18 @@ function App() {
     );
   };
 
+  const handleDeleteTodoClick = id => {
+    const updatedTodos = todos.filter(t => t.id !== id);
+    setTodos(updatedTodos);
+  };
+
   return (
     <React.Fragment>
-      <TodosContainer todos={todos} handleCheckChange={handleCheckChange} />
+      <TodosContainer
+        todos={todos}
+        handleCheckChange={handleCheckChange}
+        handleDeleteTodoClick={handleDeleteTodoClick}
+      />
     </React.Fragment>
   );
 }

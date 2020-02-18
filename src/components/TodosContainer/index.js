@@ -3,7 +3,7 @@ import React from 'react';
 import SingleTodo from '../SingleTodo';
 
 const TodosContainer = props => {
-  const { todos, handleCheckChange } = props;
+  const { todos, handleCheckChange, handleDeleteTodoClick } = props;
 
   return (
     <div>
@@ -14,6 +14,7 @@ const TodosContainer = props => {
               key={todo.id}
               todo={todo}
               handleCheckChange={handleCheckChange}
+              handleDeleteTodoClick={handleDeleteTodoClick}
             />
           );
           // return <p key={todo.id}>{todo.title}</p>;
