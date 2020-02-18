@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SingleTodo = props => {
-  const { todo } = props;
+  const { todo, handleCheckChange } = props;
 
   const getStyle = () => {
     const style = {
@@ -21,7 +21,10 @@ const SingleTodo = props => {
 
   return (
     <div style={getStyle()}>
-      <p>{todo.title}</p>
+      <p>
+        <input type='checkbox' onChange={() => handleCheckChange(todo.id)} />
+        {todo.title}
+      </p>
     </div>
   );
 };

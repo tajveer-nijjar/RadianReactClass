@@ -7,7 +7,7 @@ function App() {
     {
       id: 1,
       title: 'Attend restro meeting',
-      done: true
+      done: false
     },
     {
       id: 2,
@@ -21,9 +21,13 @@ function App() {
     }
   ]);
 
+  const handleCheckChange = id => {
+    console.log(id);
+  };
+
   return (
     <React.Fragment>
-      <TodosContainer todos={todos} />
+      <TodosContainer todos={todos} handleCheckChange={handleCheckChange} />
     </React.Fragment>
   );
 }
