@@ -22,7 +22,15 @@ function App() {
   ]);
 
   const handleCheckChange = id => {
-    console.log(id);
+    setTodos(
+      todos.map(todo => {
+        if (todo.id === id) {
+          todo.done = !todo.done;
+        }
+
+        return todo;
+      })
+    );
   };
 
   return (
